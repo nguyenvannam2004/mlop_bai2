@@ -22,7 +22,7 @@ X_scaled = scaler.fit_transform(X)
 
 # Chia train/test CÓ stratify để giữ tỉ lệ class
 train_X, test_X, train_y, test_y = train_test_split(
-    X_scaled, y, test_size=0.2, random_state=42, stratify=y
+    X_scaled, y, test_size=0.3, random_state=42, stratify=y
 )
 
 # Tạo thư mục output

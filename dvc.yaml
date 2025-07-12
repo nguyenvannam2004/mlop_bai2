@@ -1,0 +1,25 @@
+stages:
+  get_data:
+    cmd: python get_data.py
+    deps:
+    - get_data.py
+    outs:
+    - data/heart.csv
+  process_data:
+    cmd: python process_data.py
+    deps:
+    - data/heart.csv
+    - process_data.py
+    outs:
+    - data/processed/test.csv
+    - data/processed/train.csv
+  train_model:
+    cmd: python train.py
+    deps:
+    - data/processed/train.csv
+    - train.py
+    outs:
+    - model/heart_clf.pkl
+    metrics:
+    - metrics.json:
+        cache: false

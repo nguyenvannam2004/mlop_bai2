@@ -21,34 +21,34 @@ stages:
       size: 11585
     - path: process_data.py
       hash: md5
-      md5: a2ed4097b855a972666396b17a9df515
-      size: 616
+      md5: fab86ea05764ebe19aa0db3f36c38c81
+      size: 1312
     outs:
     - path: data/processed/test.csv
       hash: md5
-      md5: db9b5a53096a8ea84be1261dbdecfcfc
-      size: 23509
+      md5: d417b5a77322a32f3df614eb376ac8da
+      size: 15773
     - path: data/processed/train.csv
       hash: md5
-      md5: 202eef695bd5771d8ddfa23cd6405515
-      size: 54967
+      md5: 64b91f4967baac073db07c14b314f35c
+      size: 62790
   train_model:
     cmd: python train.py
     deps:
     - path: data/processed/train.csv
       hash: md5
-      md5: 202eef695bd5771d8ddfa23cd6405515
-      size: 54967
+      md5: 64b91f4967baac073db07c14b314f35c
+      size: 62790
     - path: train.py
       hash: md5
-      md5: 73af96b7158ca3ae8320bbce8bd9583a
-      size: 1256
+      md5: 4bdbdeeae5311d7ce58635936b26816f
+      size: 1618
     outs:
     - path: metrics.json
       hash: md5
-      md5: 67f151f58b2b4292e5c684d62a09e04e
-      size: 89
+      md5: c1908e5333ff00892e9303fe42cbffd7
+      size: 120
     - path: model/heart_clf.pkl
       hash: md5
-      md5: c859095b07b0d817ef08f48953d3adca
-      size: 527689
+      md5: 76950ae9a4934ef382e0cb654c3acb37
+      size: 820809
